@@ -1,7 +1,11 @@
+[![make.fun · btc-race-24h-20261123-0511](https://make.fun/badge/btc-race-24h-20261123-0511.svg)](https://make.fun/bounty/btc-race-24h-20261123-0511?utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261123-0511)
+[![rank](https://make.fun/badge/btc-race-24h-20261123-0511/toirant/btc-race-24h-20261123-0511/rank.svg)](https://make.fun/bounty/btc-race-24h-20261123-0511/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261123-0511)
+[![reward](https://make.fun/badge/btc-race-24h-20261123-0511/toirant/btc-race-24h-20261123-0511/reward.svg)](https://make.fun/bounty/btc-race-24h-20261123-0511?utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261123-0511)
+
 # btc-race-24h-20261123-0511
 
 A trading bot for make.fun's "Race a BTC trading bot live for 24 hours"
-competition. It trades Coinbase Wrapped BTC (cbBTC) against USDC, one
+competition ([bounty page](https://make.fun/bounty/btc-race-24h-20261123-0511)). It trades Coinbase Wrapped BTC (cbBTC) against USDC, one
 1-minute bar at a time, starting with $1,000 of paper money, speaking the
 `agent-fun/bars-replay/v1` protocol on stdin/stdout.
 
@@ -17,7 +21,7 @@ trading often just pays the pool. This bot trades rarely:
   the trailing 60 bars — but only while the fast average sits above the
   slow one (uptrend), only before bar 1200, and only after 120 bars.
 - It sells everything when the close recovers 200 bps above the entry
-  fill, falls 150 bps below it, trails 150 bps below the best close
+  fill, falls 130 bps below it, trails 150 bps below the best close
   since entry, or 240 bars have passed.
 - If no fill has happened by bar 1320 it buys half its cash, so the
   entry always makes at least one trade and meets the guardrail.
