@@ -16,8 +16,11 @@
 //    trend is up), only before bar 1200, and only once the averages have
 //    had 120 bars to settle.
 //  - Sell everything when the close recovers 200 bps above the entry
-//    fill, falls 150 bps below it, trails 150 bps below the best close
-//    since entry, or 240 bars have passed.
+//    fill, falls 130 bps below it, trails 150 bps below the best close
+//    since entry, or 240 bars have passed. The 130 bps stop is the
+//    tight end of the tested plateau (130-170 all clear the dev gate):
+//    in a down-trend the losing trades fell straight from entry, so a
+//    tighter hard stop cuts each such loss by about 20 bps of notional.
 //  - If no fill has happened by bar 1320, buy half the cash at the next
 //    bar so the entry is never left with zero trades.
 //
@@ -32,7 +35,7 @@ const MAX_SLIPPAGE_BPS = 300;
 const LOOKBACK_BARS = 60;
 const DIP_BPS = 100;
 const RECOVERY_BPS = 200;
-const STOP_BPS = 150;
+const STOP_BPS = 130;
 const TRAIL_BPS = 150;
 const MAX_HOLD_BARS = 240;
 const FAST_BARS = 30;
